@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(uuid())
+  email     String     @unique
+  password  String
+  name      String
+  createdAt DateTime   @default(now())
+  documents Document[]
+}
+
+model Document {
+  id         String    @id @default(uuid())
+  title      String    @default("Untitled")
+  ownerId    String
+  owner      User      @relation(fields: [ownerId], references: [id])
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  versions   Version[]
+  shareToken String?   @unique
+  isPublic   Boolean   @default(false)
+}
+
+model Version {
+  id         String   @id @default(uuid())
+  documentId String
+  document   Document @relation(fields: [documentId], references: [id])
+  snapshot   Bytes
+  label      String?
+  createdAt  DateTime @default(now())
+}

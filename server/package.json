@@ -1,0 +1,25 @@
+{
+  "name": "collab-docs-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^6",
+    "bcryptjs": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "jsonwebtoken": "latest",
+    "prisma": "^6",
+    "ws": "latest",
+    "y-leveldb": "latest",
+    "y-websocket": "latest",
+    "yjs": "latest"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  }
+}
