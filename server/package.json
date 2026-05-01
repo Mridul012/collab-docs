@@ -7,16 +7,18 @@
     "start": "node src/app.js"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.91.1",
     "@prisma/client": "^6",
     "bcryptjs": "latest",
     "cors": "latest",
     "dotenv": "latest",
     "express": "latest",
+    "groq-sdk": "^1.1.2",
     "jsonwebtoken": "latest",
     "prisma": "^6",
     "ws": "latest",
     "y-leveldb": "latest",
-    "y-websocket": "latest",
+    "y-websocket": "^1",
     "yjs": "latest"
   },
   "devDependencies": {

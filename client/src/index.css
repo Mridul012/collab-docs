@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+* { box-sizing: border-box; }
+body { margin: 0; background: #000; font-family: 'Geist Mono', monospace; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #333; }
+
+.ProseMirror {
+  font-family: system-ui, sans-serif;
+  color: #ededed;
+  line-height: 1.8;
+  font-size: 16px;
+  outline: none;
+  min-height: 100%;
+}
+.ProseMirror h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-family: 'Geist Mono', monospace;
+  letter-spacing: -0.02em;
+}
+.ProseMirror h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ededed;
+  font-family: 'Geist Mono', monospace;
+}
+.ProseMirror p { margin-bottom: 0.75rem; }
+.ProseMirror ul, .ProseMirror ol {
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #333;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+.collaboration-cursor__caret {
+  border-left: 2px solid;
+  margin-left: -1px;
+  margin-right: -1px;
+  pointer-events: none;
+  position: relative;
+  word-break: normal;
+}
+.collaboration-cursor__label {
+  border-radius: 3px;
+  color: #000;
+  font-size: 11px;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  left: -1px;
+  line-height: normal;
+  padding: 2px 6px;
+  position: absolute;
+  top: -1.6em;
+  user-select: none;
+  white-space: nowrap;
+  pointer-events: none;
+}

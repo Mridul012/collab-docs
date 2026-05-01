@@ -8,16 +8,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.2.4",
     "@tanstack/react-query": "latest",
     "@tiptap/extension-collaboration": "latest",
     "@tiptap/extension-collaboration-cursor": "latest",
     "@tiptap/pm": "latest",
     "@tiptap/react": "latest",
     "@tiptap/starter-kit": "latest",
+    "@tiptap/y-tiptap": "^3.0.3",
     "axios": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "latest",
+    "tailwindcss": "^4.2.4",
+    "y-prosemirror": "^1.3.7",
     "y-websocket": "latest",
     "yjs": "latest",
     "zustand": "latest"
