@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import CollabEditor from '../components/Editor/CollabEditor.jsx'
 import CollabCursors from '../components/Editor/CollabCursors.jsx'
+import Toolbar from '../components/Editor/Toolbar.jsx'
+import SlashCommands from '../components/Editor/SlashCommands.jsx'
 import { getSharedDocument } from '../services/api.js'
 
 const colors = ['#6366f1','#f59e0b','#10b981','#ef4444','#8b5cf6','#ec4899','#06b6d4','#f97316','#84cc16']
@@ -54,6 +56,7 @@ export default function SharedEditorPage() {
           <span className="text-[#4ade80] text-xs font-mono">{onlineCount} online</span>
         </div>
       </div>
+      <Toolbar editor={editor} />
       <div className="flex-1 overflow-y-auto" style={{ background: '#050505' }}>
         <div className="max-w-2xl mx-auto w-full pt-12 pb-12 px-4">
           <CollabEditor
@@ -63,6 +66,7 @@ export default function SharedEditorPage() {
             onOnlineCountChange={setOnlineCount}
             onAwarenessReady={setAwareness}
           />
+          <SlashCommands editor={editor} />
         </div>
       </div>
       <CollabCursors editor={editor} awareness={awareness} />
