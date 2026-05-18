@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/app.js",
-    "start": "node src/app.js"
+    "build": "prisma generate",
+    "start": "prisma migrate deploy && node src/app.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.91.1",

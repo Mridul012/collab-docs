@@ -34,9 +34,9 @@ app.use('/api/auth', authRoutes)
 app.use('/api/documents', documentRoutes)
 app.use('/api/ai', aiRoutes)
 
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok' })
-})
+// app.get('/api/health', (req, res) => {
+//   res.json({ status: 'ok' })
+// })
 
 const server = http.createServer(app)
 

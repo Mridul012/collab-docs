@@ -67,7 +67,6 @@ export default function HomePage() {
         <div className="flex gap-6 items-center">
           <a href="#features" className="text-[#555] hover:text-white text-xs font-mono transition-colors">features</a>
           <a href="#how" className="text-[#555] hover:text-white text-xs font-mono transition-colors">how it works</a>
-          <a href="#" className="text-[#555] hover:text-white text-xs font-mono transition-colors">github</a>
           <button
             onClick={() => navigate('/register')}
             className="bg-white text-black text-xs font-mono font-semibold px-4 py-2 rounded hover:bg-[#ededed] transition-colors"
@@ -102,12 +101,6 @@ export default function HomePage() {
           >
             get started →
           </button>
-          <a
-            href="#"
-            className="border border-[#222] text-[#888] text-xs font-mono px-6 py-3 rounded hover:border-[#444] hover:text-white transition-all"
-          >
-            view on github
-          </a>
         </div>
 
         {/* APP PREVIEW */}
@@ -211,8 +204,8 @@ export default function HomePage() {
                 <div className="w-8 h-8 border border-[#222] rounded-md flex items-center justify-center mb-4 text-sm">
                   {f.icon}
                 </div>
-                <p className="text-xs font-mono font-semibold text-[#ccc] mb-2 tracking-[0.05em]">{f.title}</p>
-                <p className="text-[11px] text-[#444] leading-relaxed font-sans">{f.desc}</p>
+                <p className="text-sm font-bold font-mono text-[#ccc] mb-2 tracking-wider">{f.title}</p>
+                <p className="text-base text-gray-400 leading-relaxed font-sans">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -222,8 +215,8 @@ export default function HomePage() {
                 <div className="w-8 h-8 border border-[#222] rounded-md flex items-center justify-center mb-4 text-sm">
                   {f.icon}
                 </div>
-                <p className="text-xs font-mono font-semibold text-[#ccc] mb-2 tracking-[0.05em]">{f.title}</p>
-                <p className="text-[11px] text-[#444] leading-relaxed font-sans">{f.desc}</p>
+                <p className="text-sm font-bold font-mono text-[#ccc] mb-2 tracking-wider">{f.title}</p>
+                <p className="text-base text-gray-400 leading-relaxed font-sans">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -240,9 +233,9 @@ export default function HomePage() {
         <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
           {steps.map((s) => (
             <div key={s.num}>
-              <p className="text-[10px] text-[#333] font-mono mb-3 tracking-[0.1em]">{s.num}</p>
-              <p className="text-xs text-[#888] font-mono font-semibold mb-2">{s.title}</p>
-              <p className="text-[11px] text-[#333] font-sans leading-relaxed">{s.desc}</p>
+              <p className="text-[10px] text-[#555] font-mono mb-3 tracking-[0.1em]">{s.num}</p>
+              <p className="text-lg font-semibold text-white font-mono mb-2">{s.title}</p>
+              <p className="text-base text-gray-400 font-sans leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -263,18 +256,12 @@ export default function HomePage() {
           >
             get started →
           </button>
-          <a
-            href="#"
-            className="border border-[#222] text-[#888] text-xs font-mono px-6 py-3 rounded hover:border-[#444] hover:text-white transition-all"
-          >
-            view on github
-          </a>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer className="h-12 border-t border-[#0f0f0f] flex items-center justify-between px-12">
-        <span className="text-[10px] text-[#333] font-mono">© 2026 CollabDocs — built by Mridul</span>
+        <span className="text-sm text-[#333] font-mono">© 2026 CollabDocs — built by Mridul</span>
         <div className="flex gap-6">
           <a href="#" className="text-[10px] text-[#333] font-mono hover:text-[#888] transition-colors">github</a>
           <a href="#" className="text-[10px] text-[#333] font-mono hover:text-[#888] transition-colors">linkedin</a>
