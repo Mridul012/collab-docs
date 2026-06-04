@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import useAuthStore from '../../store/authStore.js'
-import { register } from '../../services/api.js'
+import { register, loginUser } from '../../services/api.js'
 
 const dotGrid = {
   backgroundImage: 'radial-gradient(circle, #1a1a1a 1px, transparent 1px)',
@@ -19,6 +19,20 @@ export default function Register() {
 
   const login = useAuthStore((state) => state.login)
   const navigate = useNavigate()
+
+  async function handleDemoLogin() {
+    setError('')
+    setIsLoading(true)
+    try {
+      const res = await loginUser('demo@collabdocs.com', 'demo123')
+      login(res.data.user, res.data.token)
+      navigate('/dashboard')
+    } catch (err) {
+      setError(err.response?.data?.message || 'Login failed')
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -45,6 +59,22 @@ export default function Register() {
           COLLABDOCS
         </p>
         <p className="text-[#444] text-xs font-mono mb-8">create account</p>
+
+        <button
+          type="button"
+          onClick={handleDemoLogin}
+          disabled={isLoading}
+          className="w-full mb-6 border border-[#1a3a1a] bg-[#0d1f0d] hover:bg-[#112611] text-[#4ade80] text-xs font-mono font-semibold py-2.5 rounded transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+        >
+          <div className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
+          {isLoading ? 'logging in...' : 'try demo'}
+        </button>
+
+        <div className="flex items-center gap-3 mb-6">
+          <div className="flex-1 h-px bg-[#1a1a1a]" />
+          <span className="text-[#333] text-[10px] font-mono">or</span>
+          <div className="flex-1 h-px bg-[#1a1a1a]" />
+        </div>
 
         <form onSubmit={handleSubmit}>
           <label className="text-[#444] text-[10px] font-mono uppercase tracking-widest mb-1 block">
